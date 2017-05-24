@@ -14,8 +14,24 @@ class HomePageView(TemplateView):
     def get(self, request, **kwargs):
         return render(request, 'index.html', context=None)
 
+# Game
+
+class GameView(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'game.html', context=None)
+
+class AboutView(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'about.html', context=None)
+
+class ScoresView(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'scores.html', context=None)
+
+
+
 # REST API
-class ScoreView(APIView):
+class ScoreAPIView(APIView):
 
     def get(self, request):
         scores = Score.objects.all()
